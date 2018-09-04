@@ -1,0 +1,155 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { 
+	font-size: 0.32rem;
+}
+header {
+	height: 1.12rem;
+	background: #00bcd4;
+	display: flex;
+}
+.logo img{
+	width: 0.30rem;
+	height: 0.4rem;
+	width: 0.32rem;
+	height: 0.44rem;
+	margin-left: 0.32rem;
+}
+.search{
+	flex: 3;
+	position: relative;
+	font-size: 0.42rem;
+	color: #FFFFFF;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.preLogin {
+	background: #FFFFFF;
+	line-height: 0.8rem;
+	color: #757575;
+	border-bottom: 0.25rem solid #EEEEEE;
+	font-size: 0.3rem;
+	padding-left: 0.32rem;
+}
+.preLogin>a{
+	color: #FF5722;
+}
+
+
+main {
+	border-top: 0.02rem #DDDDDD solid;
+	background: #fff;
+	padding:0 0.3rem;
+	margin-bottom: 1.5rem;
+}
+main h2{
+	line-height: 0.8rem;
+	
+	border-bottom: 0.02rem solid #ddd;
+	font-weight: normal;
+	font-size: 0.3rem;
+}
+
+.shop_content > div {
+	display: flex;
+	padding: 0.3rem 0;
+	border-bottom: 0.02rem solid #ddd;
+}
+
+.shop_content > div input {
+	flex: 6;
+}
+.shop_content .shop_photo {
+	flex: 16;
+	margin-left: 0.1rem;
+	margin-right: 0.3rem;
+}
+.shop_content .shop_photo img{
+	width: 100%;
+	height: auto;
+	border: 0.02rem solid #ddd;
+}
+
+.shop_content .shop_info {
+	flex: 46;
+}
+
+.shop_info h3 {
+	font-size: 0.32rem;
+	font-weight: normal;
+	width: 100%;
+}
+
+.shop_info > div {
+	display: flex;
+	margin-top: 0.16rem;
+	justify-content: space-between;
+}
+
+.count {
+	 display: flex;
+	width: 1.8rem;
+	margin-right: 0.2rem;
+	height: 0.5rem;
+}
+.count button { width: 33.3333%;}
+.count input { width: 33.3333%; 
+text-align: center;}
+
+.shop_price {
+	width: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.shop_price em{
+	font-style: normal;
+	color: #f33;
+	text-align: right;
+	font-size: 0.36rem;
+}
+
+
+footer{
+	background: #FFFFFF;
+	display: flex;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0.96rem;
+	justify-content: space-between;
+	border-top: 2px #DDDDDD solid;
+	position: fixed;
+	align-items: center;
+}
+
+footer > input {
+	width: 0.5rem;
+}
+footer p{
+	text-align: center;
+	line-height: 0.96rem;
+}
+.all{
+	display: flex;
+	text-align: center;
+}
+
+.pay{
+	background: #FF5722;
+	width: 1.76rem;
+}
+.pay p{
+	color: #FFFFFF;
+}
+.total{
+	margin-left: 2rem;
+}
+.total em{
+	font-style: normal;
+	color: #FF5722;
+}

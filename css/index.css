@@ -1,0 +1,352 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 1.12rem;
+	background: #00bcd4;
+	display: flex;
+}
+.logo{
+	width: 1.64rem;
+	height: 0.58rem;
+	padding-top: 0.48rem;
+}
+header img {
+	width: 80%;
+	height: auto;
+}
+.search{
+	flex: 3;
+	position: relative;
+}
+.search input {
+	width: 95%;
+	height: 0.64rem;
+	border: none;
+	background:#0097a7 url(../images/index/search.jpg) no-repeat 15px center;
+	background-size: 0.36rem;
+	border-radius: 0.1rem;
+	color: #fff;
+	padding-left: 0.12rem;
+	font-size: 0.24rem;
+}
+.search img{
+	width: 0.36rem;
+	height: 0.36rem;
+	position: absolute;
+	right: 0.32rem;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.person img{
+	width: 0.6rem;
+	height: 0.6rem;
+	margin-right: 0.32rem;
+}
+.banner img {
+	width: 100%;
+	height: auto;
+}
+
+nav li{
+	width: 0.64rem;
+	margin: 0.15rem 0.4rem;
+	float: left;
+	text-align: center;
+	font-size: 0.24rem;
+	list-style: none;
+}
+nav li img{
+	width: 100%;
+	height: auto;
+}
+.lm_1{
+	border-top: 0.24rem solid #eeeeee;
+	clear: both;
+	padding-left: 0.28rem;
+	padding-top: 0.08rem;
+}
+.lm_top{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.lm_1 h4 section{
+	font-size: 0.2rem;
+	color: #FF5722;
+}
+.lm_1 h4 span{
+	font-size: 0.12rem;
+	color: #BDBDBD;
+}
+
+.lm_content{
+	display: flex;
+	padding-right: 0.32rem;
+	padding-top: 0.16rem;
+
+}
+.lm_content h4{
+	line-height: 0.18rem;
+}
+.lm_top>div:nth-child(1){
+	border-right: 1px #EEEEEE solid;
+	border-bottom: 1px #EEEEEE solid;
+}
+.lm_top>div:nth-child(2){
+	border-bottom: 1px #EEEEEE solid;
+	padding-left: 0.32rem;
+}
+.lm_top>div:nth-child(4){
+	padding-left: 0.32rem;
+	border-bottom: 1px #EEEEEE solid;
+}
+.lm_top>div:nth-child(3){
+	border-right: 1px #EEEEEE solid;
+	border-bottom: 1px #EEEEEE solid;
+}
+.lm_top>div{
+	width:3.6rem;
+	height: 1.94rem;
+}
+.left img{
+	width: 1.24rem;
+	height:1.24rem;
+	padding-right: 0.08rem;
+}
+.right img{
+	width:1.65rem ;
+	height: 1.65rem;
+}
+
+
+.lm_bottom{
+	padding-top: 0.08rem;
+	padding-right: 0.28rem;
+}
+.lm_bottom h4{
+	display: flex;
+}
+.lm_bottom h4 span{
+	padding-left: 0.08rem;
+	padding-top: 0.06rem;
+}
+.bottom_content{
+	display: flex;
+	justify-content: space-around;
+}
+.bottom_content b{
+	color: #212121;
+	font-size: 0.16rem;
+	line-height: 0.36rem;
+}
+.bottom_content p{
+	color: #757575;
+	font-size: 0.12rem;
+}
+.bottom_content span{
+	color: #757575;
+	font-size: 0.09rem;
+	padding-left: 0.16rem;
+	background: url(../images/index/heart_1.jpg) no-repeat left center;
+	background-size: 0.15rem;
+}
+
+.content_1{
+	display: flex;
+	padding-top: 0.08rem;
+}
+.content_1 img{
+	width: 1.12rem;
+	height: 1.12rem;
+}
+.content_1>div:nth-child(2){
+	padding-left: 0.08rem;
+}
+/*今日好店*/
+.hd{
+	padding-top: 0.16rem;
+}
+.hd_banner{
+	border-top: 0.24rem solid #eeeeee;
+	clear: both;
+}
+
+.hd_banner img{
+	width: 100%;
+	height: auto;
+}
+.big{
+	position: relative;
+}
+.title{
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 0.2rem;
+	top: -0.12rem;
+	width: 0.96rem;
+	height: 0.32rem;
+	background: #FF5722;
+	border-bottom-right-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+.title p{
+	text-align: center;
+	line-height:0.36rem;
+}
+.title img{
+	width: 1rem;
+	height: 0.32rem;
+}
+.hd_banner{
+	flex: 1;
+	display: flex;
+}
+.hd_banner big{
+	flex:6;
+}
+
+.hd_banner small{
+	flex:4;
+}
+
+.hd h4{
+	display: flex;
+}
+.hd section{
+	font-size: 0.2rem;
+	color: #212121;
+}
+.hd span{
+	font-size: 0.16rem;
+	color: #bcbcbc;
+	padding-left: 0.08rem;
+	font-weight: normal;
+	padding-top: 0.04rem;
+}
+
+.hd_content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.hd_content h4{
+	padding-bottom: 0.08rem;
+}
+.hd_content>div{
+	width: 3.16rem;
+}
+.ns img{
+	width: 1.05rem;
+	height: auto;
+}
+.ns_big img{
+	width: 2.1rem;
+	height: 2.17rem;
+	padding-right: 0.08rem;
+}
+
+.ns_content{
+	display: flex;
+}
+
+/*实惠好货*/
+.sh{
+	padding-top: 0.16rem;
+}
+.sh h4 {
+	line-height: 0.24rem;
+}
+.sh h4 section{
+	font-size: 0.2rem;
+	color: #212121;
+}
+.sh h4 span{
+	font-size: 0.16rem;
+	color: #bcbcbc;
+	font-weight: normal;
+}
+.sh_top_1 h4 section{
+	color: #ff5722;
+}
+.sh_top{
+	display: flex;
+	justify-content: space-around;
+}
+.sh_top img{
+	width: 1.5rem;
+	height: 1.5rem;
+	padding-top: 0.08rem;
+}
+.sh_bottom h4{
+	text-align: center;
+}
+.sh_bottom{
+	display: flex;
+	justify-content: space-around;
+	padding-left: 0.16rem;
+		padding-right: 0.16rem;
+}
+.sh_bottom img{
+	width: 1.5rem;
+	height: 1.5rem;
+	padding-top: 0.08rem;
+}
+
+.like{
+	border-top: 0.24rem solid #eeeeee;
+	clear: both;
+}
+.like h3{
+	font-size: 0.24rem;
+	color:#ff5722;
+	line-height: 0.24rem;
+	text-align: center;
+	font-weight: normal;
+	background: url(../index/猜你喜欢.jpg) no-repeat 2.95rem center;
+	background-size: 0.2rem;
+	background-color: #EEEEEE;
+}
+.like_content{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding-top: 0.16rem;
+	background: #EEEEEE;
+}
+.like_content p{
+	color: #757575;
+	font-size: 0.18rem;
+	padding-left: 0.08rem;
+}
+.like_content span{
+	color: #FF5722;
+	font-size: 0.2rem;
+	padding-left: 0.08rem;
+}
+.like_content em{
+	color: #bdbdbd;
+	font-size: 0.14rem;
+	font-style: normal;
+}
+.like_content b{
+	color: #FF5722;
+	font-size: 0.16rem;
+	border: 1px solid #FF5722;
+	padding: 0  0.05rem;
+	margin-left: 0.08rem;
+}
+.like_content img{
+	width: 3.2rem;
+	height: 4.27rem;
+
+}
+.like_content>div{
+	width: 3.2rem;
+	height:5.3rem;
+	background: #FFFFFF;
+	margin-bottom: 0.08rem;
+}

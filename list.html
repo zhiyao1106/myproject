@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+	</head>
+	<body>
+		<div id="box">
+			<header>
+				<div class="logo" onclick="history.back()"><img src="images/category/icon.jpg"/></div>
+				<div class="search">{{title}}</div>
+			</header>
+			<div class="btns">
+				<b @click="pay()">价格</b>
+				<b >品牌</b>
+				<b class="icon">销量</b>
+				<b  class="icon">筛选</b>
+			</div>
+		
+			<div class="show" v-if="isShow">你要找的商品不存在~</div>
+			<div class="list_content" v-else >
+				<div v-for="item in ary">
+					<div>
+						<img :src="item.img" v-on:click="jump(item.id)" />
+					</div>
+					<p>
+						{{item.title}}
+					</p>
+					<span>￥<b>{{item.price}}</b></span>
+					<s>￥{{item.oldprice}}</s>
+				</div>
+			</div>
+		</div>
+			
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var codeStr = decodeURI(location.search.split("=")[1]); 
+			console.log(typeof codeStr)
+			var app = new Vue({
+				el:"#box",
+				data:{
+					isShow:true,
+					ary:[],
+					title:codeStr,
+					isSort:true,
+					
+				},
+				created(){
+					if(codeStr != "undefined"){
+						axios.get("/list/"+codeStr).then((res)=>{
+							console.log(res)
+							if(res.data.length != 0){
+								this.isShow = false;
+								this.ary = res.data
+							}
+						})
+					}
+					
+				},
+				methods:{
+					jump(id){
+						location = "detail.html?id="+id;
+					},
+					pay(){
+						if(this.isSort){
+							this.ary.sort(function(a,b){
+								return a.price - b.price;
+							})
+							this.isSort = false
+						}else{
+							this.ary.sort(function(a,b){
+								return b.price - a.price;
+							})
+							this.isSort = true
+						}
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

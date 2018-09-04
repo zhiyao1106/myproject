@@ -1,0 +1,139 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { 
+	font-size: 0.32rem;
+	height: 12.8rem;
+}
+header {
+	height: 1.12rem;
+	background: #00bcd4;
+	display: flex;
+}
+header>div{
+	align-items: center;
+}
+.logo img{
+	width: 0.30rem;
+	height: 0.4rem;
+	width: 0.32rem;
+	height: 0.44rem;
+	margin-left: 0.32rem;
+}
+.search{
+	flex: 3;
+	position: relative;
+	font-size: 0.42rem;
+	color: #FFFFFF;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+}
+
+.zhanghao{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 0.48rem;
+}
+.zhanghao>div input{
+
+	width: 6.6rem;
+	height: 0.72rem;
+	font-size: 0.24rem;
+	color: #757575;
+	border: none;
+}	
+
+.zhanghao>div input{
+	border-bottom: 2px #DDDDDD solid;
+}
+.zhanghao>div:nth-child(1){
+	margin-bottom: 0.24rem;
+}
+.btn{
+	display: flex;
+	justify-content: center;
+}
+.btn button{
+	width: 6.6rem;
+	height: 0.88rem;
+	background: #b2ebf2;
+	border: none;
+	border-radius: 0.05rem;
+	margin-top: 0.5rem;
+	color:#757575;
+	font-size: 0.32rem;
+}
+.free{
+	display: flex;
+	justify-content: space-between;
+	margin-left: 0.42rem;
+	margin-right: 0.44rem;
+	font-size: 0.24rem;
+	margin-top: 0.18rem;
+}
+.free p{
+	color: #00bcd4;
+}
+
+
+
+.hz {
+	display: flex;
+	justify-content: center;
+}
+
+.hz_s {
+	display: flex;
+	width: 90%;
+	border-bottom: 0.01rem dashed #c8c8c8;
+	margin-top: 4.5rem;
+	padding-bottom: 0.2rem;
+	justify-content: center;
+}
+
+.hz_s span {
+	color: 071b26;
+}
+
+.wqw {
+	display: flex;
+	height: 2.46rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wqw > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wqw img {
+	width: 50%;
+	height: auto;
+}
+
+.wechat {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.qq {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.weibo {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.wqw span {
+	width: 100%;
+	text-align: center;
+	color: #66666e;
+	padding-top: 0.15rem;
+}

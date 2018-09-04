@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo" onclick="history.back()"><img src="images/category/icon.jpg "/></div>
+			<div class="search">登录</div>
+		</header>
+		<div id="box">
+			<div class="zhanghao">
+				<div>
+					<input type="txt" placeholder="请输入您的用户名" v-model="obj.phone"/>
+				</div>
+				<div>
+					<input type="txt" placeholder="请输入您的密码"  v-model="obj.psw"/>
+				</div>
+			</div>
+			<div class="denglu">
+				<div class="btn">
+					<button @click="login()">登录</button>
+				</div>
+				<div class="free">
+					<a href="zhuce.html" style="text-decoration: none;"><p>免费注册</p></a>
+					<span>忘记密码</span>
+				</div>
+				
+				
+				<div class="hz">
+					<div class="hz_s">
+						<span>其他方式登录</span>
+					</div>
+				</div>
+				<div class="wqw">
+					<div class="weibo">
+						<img src="images/denglu/weibo.jpg"/>
+						<span>微博</span>
+					</div>
+					<div class="qq">
+						<img src="images/denglu/qq.jpg"/>
+						<span>QQ</span>
+					</div>
+					<div class="wechat">
+						<img src="images/denglu/weixin.jpg"/>
+						<span>微信</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	   <script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	   <script type="text/javascript">
+	          var app = new Vue({
+	          	el:"#box",
+	          	data:{
+	          		obj:{
+	          			phone:"",
+	          			psw:""
+	          		}
+	          	},
+	          	methods:{
+	          		login(){
+	          			axios.post("/login",this.obj).then((res)=>{
+	          				console.log(res)
+	          				if(res.data == "ok"){
+	          					localStorage.setItem("phone",this.obj.phone)
+	          				    location = localStorage.getItem("loginJump")
+	          				}else{
+	          					alert(res.data)
+	          				}
+	          			})
+	          		}
+	          	}
+	          })
+	    	
+	    </script>
+	</body>
+</html>

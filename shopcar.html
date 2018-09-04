@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo"  onclick="history.back()"><img src="images/category/icon.jpg"/></div>
+			<div class="search">购物车</div>
+		</header>
+		<div id="box">
+			<div class="preLogin">
+				<a href="#">登录</a>
+				后可以查看历史收藏，还能使用优惠券噢~
+			</div>
+			<main>
+				<div v-for="(item,index) in ary">
+					<h2>茉语家</h2>
+					<div class="shop_content">
+						<div>
+							<input type="checkbox" v-model="item.bool" />
+							<div class="shop_photo">
+								<img :src="item.img"/>
+							</div>
+							<div class="shop_info">
+								<h3>{{item.title}}</h3>
+								<div>
+									<div class="count">
+										<button @click="jian(item,index)">-</button>
+										<input type="number" v-model="item.num"  min="1"/>
+										<button @click="jia(item)">+</button>
+									</div>
+									<div class="shop_price">
+										<em>￥{{item.price}}.00</em>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</main>
+			
+			
+			<footer>
+				<input type="checkbox" v-model="selectAll" v-on:change="select()"  />
+				<p>全选</p>
+				<div class="total">
+					<p>合计 :<em>￥{{abc}}.00</em></p>
+				</div>
+				<div class="pay"  @click="next()">
+					<p>结算</p>
+				</div>
+			</footer>
+		</div>
+		
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					ary:JSON.parse(localStorage.getItem("shopCar")) || [],
+				    selectAll:true
+				},
+				
+				computed:{
+					abc(){
+						var total = 0;
+						for(var i=0;i<this.ary.length;i++){
+							if(this.ary[i].bool){
+								total += this.ary[i].price*this.ary[i].num
+							}
+						}
+						return total;
+					},
+					
+				},
+				methods:{
+					jia(item){
+						item.num++
+					},
+					jian(item,index){
+						if(item.num <= 1){
+							if(confirm("你确定要删除这件商品吗？")){
+								this.ary.splice(index,1)
+							}
+						}else{
+							item.num--
+						}
+					},
+					select(){
+						for(var i=0;i<this.ary.length;i++){
+							if(this.selectAll){
+								this.ary[i].bool = true
+							}else{
+								this.ary[i].bool = false
+							}
+						}
+						
+					},
+					next(){
+	 	    		         var res = [];
+	                    	for(var i=0;i<this.ary.length;i++){
+								if(this.ary[i].bool){
+									res.push(this.ary[i])
+								}
+							}
+	                    	localStorage.setItem("order",JSON.stringify(res))
+	                    if(localStorage.getItem("phone")){
+	                    	location = "pay.html"
+	                    }else{
+	                    	localStorage.setItem("loginJump","pay.html")
+	                    	location = "denglu.html"
+	                    }
+	                    localStorage.removeItem("shopCar")
+		 	    	}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,154 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { 
+	font-size: 0.32rem;
+}
+header {
+	height: 1.12rem;
+	background: #00bcd4;
+	display: flex;
+}
+.logo img{
+	width: 0.30rem;
+	height: 0.4rem;
+	width: 0.32rem;
+	height: 0.44rem;
+	margin-left: 0.32rem;
+}
+.search{
+	margin-left: 0.32rem;
+	font-size: 0.42rem;
+	color: #FFFFFF;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main{
+	margin-bottom:1.5rem;
+}
+.banner img{
+	width: 100%;
+	height: auto;
+}
+.title p{
+	font-size: 0.32rem;
+	color: #757575;
+	margin-left: 0.16rem;
+	margin-right: 0.16rem;
+}
+.title span {
+	color: #FF5722;
+	font-size: 0.24rem;
+	margin-left: 0.16rem;
+}
+.title b{
+	font-weight: normal;
+	font-size: 0.32rem;
+}
+.title s{
+	font-size: 0.24rem;
+	color: #757575;
+}
+.sale{
+	display: flex;
+	margin-left: 0.16rem;
+	align-items: center;
+	margin-top: 0.16rem;
+	padding-top: 0.16rem;
+	margin-right: 0.16rem;
+	border-top: 2px #DDDDDD solid;
+}
+.sale  span{
+	font-size: 0.28rem;
+	color: #FF5722;
+	padding: 0.04rem;
+	border: #FF5722 1px solid;
+	margin-right: 0.16rem;
+}
+.sale p{
+	color: #757575;
+	font-size: 0.24rem;
+
+}
+.serve{
+	display: flex;
+	margin-left: 0.16rem;
+	margin-top: 0.16rem;
+	margin-right: 0.16rem;
+	border-top: 2px #DDDDDD solid;
+	padding-top: 0.16rem;
+}
+.serve div{
+	width: 3.8rem;
+	height: 0.8rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+.serve p{
+	color: #212121;
+	font-size: 0.28rem;
+}
+.serve span{
+	color: #FF5722;
+	font-size: 0.24rem;
+	padding-right: 0.08rem;
+}
+.serve b{
+	color: #757575;
+	font-weight: normal;
+	padding-left: 0.08rem;
+}
+.number{
+	display: flex;	
+	margin-left: 0.16rem;
+	margin-right: 0.16rem;
+	margin-top: 0.16rem;
+	padding-top: 0.16rem;
+	border-top: 2px #DDDDDD solid;
+}
+.number span{
+	color: #212121;
+	font-size: 0.28rem;
+	margin-right:0.16rem;
+}
+.number>div{
+	width: 1.6rem;
+	display: flex;
+}
+.number>div button{
+	width: 33.3333%;
+}
+.number>div input{
+	width: 33.3333%;
+	text-align: center;
+}
+
+footer{
+	display: flex;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1.12rem;
+	border-top: 2px #DDDDDD solid;
+	position: fixed;
+}
+footer>div{
+	width:33.33333%;
+	height: 1.12rem;
+}
+footer>div p{
+	text-align: center;
+	line-height: 1.12rem;
+}
+.chat{
+	background: #FFFFFF;
+	color: #212121;
+	font-size: 0.42rem;
+	border-right: 2px #DDDDDD solid;
+}
+.buy{
+	background: #FF5722;
+	color: #FFFFFF;
+	font-size: 0.42rem;
+}

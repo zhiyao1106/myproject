@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+	</head>
+	<body>
+		
+			<header>
+				<div class="logo" onclick="history.back()"><img src="images/category/icon.jpg"/></div>
+				<div class="search">商品详情</div>
+			</header>
+			<div id="box">
+				<main>
+					<div class="banner">
+						<img :src="obj.img"/>
+					</div>
+					<div class="title">
+						<p>{{obj.title}}</p>
+			   			<span>￥<b>{{obj.price}}</b></span>
+						<s>￥{{obj.oldprice}}</s>
+					</div>
+					<div class="sale">
+						<span>满减</span>
+						<p>满200元，减20元</p>
+					</div>
+					<div class="serve">
+						<p>服务：</p>
+						<div>
+							<span>·<b>7天无理由退货</b></span>
+							<span>·<b>15天无理由换货</b></span>
+							<span class="bt">·<b>满59包邮</b></span>
+							<span>·<b>顺丰发货</b></span>
+						</div>
+					</div>
+					<div class="number">
+						<span>数量</span>
+						<div>
+							<button @click="jian()">-</button>
+							<input type="number" v-model="num" min="1"  />
+							<button @click="jia()">+</button>
+						</div>
+					</div>
+				</main>
+				
+				<footer>
+					<div class="chat"><p>联系客服</p></div>
+					<div class="chat"  @click="addShopCar()"><p>加入购物车</p></div>
+					<div class="buy"><p>立即购买</p></div>
+				</footer>
+			</div>
+		
+		
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{},
+					num:1
+				},
+				created(){
+					var id = location.search.split("=")[1]; 
+					axios.get("/detail/"+id).then((res)=>{
+						console.log(res)
+						this.obj = res.data;
+					})
+				},
+				methods:{
+					jia(num){
+						this.num++
+					},
+					jian(){
+						if(this.num > 1){
+							this.num--
+						}
+					},
+					addShopCar(){
+						var data={
+							id:this.obj.id,
+							num:this.num,
+							category:this.obj.category,
+							img:this.obj.img,
+							title:this.obj.title,
+							price:this.obj.price,
+							bool:true
+						}
+					
+						if(localStorage.getItem("shopCar")){
+							var res = JSON.parse(localStorage.getItem("shopCar"));
+							res.push(data)
+							localStorage.setItem("shopCar",JSON.stringify(res))
+						}else{
+							var ary = [data];
+							localStorage.setItem("shopCar",JSON.stringify(ary))
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

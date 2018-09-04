@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/pay.css"/>
+	</head>
+	<body>
+		<div id="box">
+			
+		
+			<header>
+				<div class="logo" onclick="history.back()"><img src="images/category/icon.jpg"/></div>
+				<div class="search">订单确认</div>
+			</header>
+			<div class="address">
+				<div>
+					<p>收货人：周智瑶</p>
+					<span>15670647017</span>
+				</div>
+				<p>
+					<img src="images/user/address.jpg"/>
+					收货地址：河南省信阳市其他区信阳职业技术学院
+					<b>（收货不便时，可选择免费代收货服务）</b>
+				</p>
+			</div>
+			
+			<div class="shop">
+				<div class="shop_content" v-for="item in ary">
+					<h3>茉语家</h3>
+					<div class="shop_title">
+						<div>
+							<img :src="item.img"/>
+						</div>
+						<div>
+							<p>
+								{{item.title}}
+							</p>
+		   					<span>¥{{item.price}} <b>x{{item.num}}</b></span>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			
+			<div class="other">
+				<div>
+					<p>配送方式</p>
+					<p>快递  免邮</p>
+				</div>
+				<div>
+					<p>运费险</p>
+					<p>卖家赠送</p>
+				</div>
+				<div>
+					<p>买家留言：<span> 选填：填写内容已和卖家协商确认</span></p>
+				</div>
+				<div>
+					<p>共{{ary.length}}款商品</p>
+					<p> 小计：<b>￥{{abc}}.00</b></p>
+				</div>
+			</div>
+			
+			<div class="niming">
+				<p>匿名购买</p>
+				
+				<input type="checkbox" />
+			</div>
+			
+			<footer>
+				<div class="total">
+					<p>合计 :<em>￥{{abc}}.00</em></p>
+				</div>
+				<div class="pay" >
+					<a href="user.html" style="text-decoration: none;"><p>结算</p></a>
+				</div>
+			</footer>
+		
+		</div>
+		
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					ary:JSON.parse(localStorage.getItem("order")) || []
+				},
+				computed:{
+					abc(){
+						var total = 0;
+						for(var i=0;i<this.ary.length;i++){
+							if(this.ary[i].bool){
+								total += this.ary[i].price*this.ary[i].num
+							}
+						}
+						return total;
+					},
+					
+				}
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/category.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo" onclick="history.back()"><img src="images/category/icon.jpg"/></div>
+			<div class="search">
+				<img src="images/index/sys.jpg"/>
+				<input type="text" value="          搜索品牌或商品" />
+			</div>
+			<div class="person"><a href="user.html"><img src="images/index/person.jpg"/></a></div>
+		</header>
+		
+		<main id="main">
+			<aside>
+				<a href="#" class="active">女装</a>
+				<a href="#">男装</a>
+				<a href="#">女鞋</a>
+				<a href="#">男鞋</a>
+				<a href="#">箱包皮具</a>
+				<a href="#">美妆个护</a>
+				<a href="#">手机数码</a>
+				<a href="#">家用电器</a>
+				<a href="#">家具家装</a>
+				<a href="#">生活超市</a>
+			</aside>
+			<article>
+				<div class="add"><img src="images/category/banner.jpg"/></div>
+				<div class="classify">
+					<h2>人气裙装/套装</h2>
+					<div class="classify_content">
+						<div v-for="(item,index) in result" v-if="index<=8">
+							<a v-bind="{href:'list.html?keyword='+item.title}">
+								<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+						
+					</div>
+				</div>
+				
+		<!--百搭上衣-->		
+				<div class="classify">
+					<h2>百搭上衣</h2>
+					<div class="classify_content">
+						<div v-for="(item,index) in result" v-if="index>8 && index<=17">
+							<a v-bind="{href:'list.html?keyword='+item.title}">
+								<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+					</div>
+				</div>
+				
+				
+		<!--裤子-->		
+				<div class="classify">
+					<h2>裤子</h2>
+					<div class="classify_content">
+						<div v-for="(item,index) in result" v-if="index>17 && index<=23">
+							<a v-bind="{href:'list.html?keyword='+item.title}">
+								<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+					</div>
+				</div>
+				
+			<!--配饰-->		
+				<div class="classify">
+					<h2>配饰</h2>
+					<div class="classify_content">
+						<div v-for="(item,index) in result" v-if="index>23 && index<=26">
+							<a v-bind="{href:'list.html?keyword='+item.title}">
+								<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+					</div>
+				</div>
+				
+			<!--精选品牌-->	
+				<div class="jingxuan">
+					<h2>精选品牌</h2>
+					<div class="jingxuan_content">
+						<div v-for="(item,index) in result" v-if="index>26 && index<=35">
+							<a v-bind="{href:'list.html?keyword='+item.title}">
+								<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+					</div>
+				</div>
+			</article>
+		</main>
+		
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#main",
+				data:{
+					result:[]
+				},
+				created(){
+					axios.get("/qwe").then((res)=>{
+						console.log(res);
+						this.result = res.data;
+					})
+				}
+			})
+		</script>
+	</body>
+</html>
